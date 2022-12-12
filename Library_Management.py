@@ -2,14 +2,14 @@ import time
 
 
 class library:
-    Librarians = [["Meet", "1234"]]       //storing the data
+    Librarians = [["Meet", "1234"]]       #storing the data
     Students = [["Meet", "0000"]]
     Rack_Book = [["Physics", "Einstin", "1000"], ["Physics", "Einstin", "1001"], ["Physics", "Edison", "1002"], ["Physics", "Einstin", "1003"], ["Physics", "Einstin", "1004"],
                  ["Chemistry", "Einstin", "2000"], ["Chemistry", "Thamos", "2001"], ["Chemistry", "Einstin", "2002"], ["Chemistry", "Nobel", "2003"], ["Chemistry", "Einstin", "2004"]]
     Dispatch_Book = []
 
 
-// change login information
+# change login information
 def Change_Login():
     if [name, pin] not in lib.Librarians:
         library.Librarians.append([name, pin])
@@ -20,7 +20,7 @@ def Change_Login():
         print("Entered same details only")
 
 
-// update status of Book
+# update status of Book
 def Update_Book():
     if [name, author, Bid] not in lib.Rack_Book:
 
@@ -33,7 +33,7 @@ def Update_Book():
         print("Book already available with same details")
 
 
-// to get the detail about the book
+# to get the detail about the book
 def Details_Books():
     print("--------------------------------------------------")
     print("Book name", " "*9, "Author Name", " "*9, "Book ID")
@@ -47,7 +47,7 @@ def Details_Books():
     print("\nNo of avaliable Books are:", len(lib.Rack_Book))
 
 
-// for adding the students    
+# for adding the students    
 def Add_Students():
     if [name, pin] not in lib.Students:
         library.Students.append([name, pin])
@@ -58,7 +58,7 @@ def Add_Students():
         print("Students already available with details")
 
 
-// for deleting students
+# for deleting students
 def Delete_Students(name, pin):
     if [name, pin] in lib.Students:
         library.Students.remove([name, pin])
@@ -69,7 +69,7 @@ def Delete_Students(name, pin):
         print("No students available with details")
 
 
-// inquiry of students
+# inquiry of students
 def Details_Students():
     print("-------------------------------")
     print("Sudent name", " "*9, "R.No")
@@ -80,7 +80,7 @@ def Details_Students():
         print("-------------------------------")
     print("\nNo of Students are:", len(library.Students))
 
-// issue the book
+# issue the book
 def Collect_Books():
     if [name, author, Bid] in lib.Rack_Book:
         library.Dispatch_Book.append([name, author, Bid])
@@ -91,7 +91,7 @@ def Collect_Books():
         print("Enter details wrong:")
 
 
-// return the book
+# return the book
 def Return_Book():
     if [name, author, Bid] in library.Dispatch_Book:
         library.Dispatch_Book.remove([name, author, Bid])
